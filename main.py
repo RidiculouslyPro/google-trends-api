@@ -6,8 +6,8 @@ app = Flask(__name__)
 
 @app.route('/trending')
 def get_trending():
-    pytrends = TrendReq(hl='en-US', tz=360)
-    pytrends.build_payload(kw_list=["tech", "AI", "SaaS"], cat=47, timeframe='now 1-d', geo='US', gprop='')
+    pytrends = TrendReq(hl='en-US', tz=-480)
+    pytrends.build_payload(kw_list=["tech", "AI", "SaaS"], cat=47, timeframe='now 1-d', geo='US', gprop='news')
     related = pytrends.related_queries()
 
     results = []
